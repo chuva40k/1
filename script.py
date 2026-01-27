@@ -1,0 +1,21 @@
+from tkinter import *
+tk = Tk()
+tk.geometry("400x400")
+tk.title("Пес патрон")
+def btn1_click():
+    lbl2 = Label(text="Привіт, " + ent.get() + "!")
+    lbl2.place(x=150, y=150)
+def btn2_click():
+    print("Прощавай, ", ent.get(), "!", sep="")
+lbl1 = Label(text="Ваше ім'я:")
+lbl1.place(x=75, y=25, width=100, height=30)
+ent = Entry(bd=1)
+ent.place(x=225, y=25, width=100, height=30)
+btn1 = Button(text="Привітання", command=btn1_click)
+btn1.place(x=75, y=75, width=100, height=50)
+btn2 = Button(text="Прощавання", command=btn2_click)
+btn2.place(x=225, y=75, width=100, height=50)
+img = PhotoImage(file="1.png")
+lbl_img = Label(image=img)
+lbl_img.place(x=75, y=200)
+tk.mainloop()
