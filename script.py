@@ -1,10 +1,11 @@
 from tkinter import *
 tk = Tk()
-tk.geometry("400x400")
+tk.geometry("600x500")
 tk.title("Пес патрон")
 def btn1_click():
-    lbl2 = Label(text="Привіт, " + ent.get() + "!")
-    lbl2.place(x=150, y=150)
+    index = listbox.curselection()[0]
+    greeting = listbox.get(index)
+    lbl_result.config(text=greeting + ", " + ent.get() + "!")
 def btn2_click():
     print("Прощавай, ", ent.get(), "!", sep="")
 lbl1 = Label(text="Ваше ім'я:")
@@ -15,7 +16,18 @@ btn1 = Button(text="Привітання", command=btn1_click)
 btn1.place(x=75, y=75, width=100, height=50)
 btn2 = Button(text="Прощавання", command=btn2_click)
 btn2.place(x=225, y=75, width=100, height=50)
+lbl_result = Label(text="")
+lbl_result.place(x=150, y=150)
+lbl_list = Label(text="Оберіть привітання:")
+lbl_list.place(x=350, y=25)
+listbox = Listbox()
+listbox.insert(1, "З 8 березня")
+listbox.insert(2, "З Новим роком")
+listbox.insert(3, "З Днем народження")
+listbox.insert(4, "Привіт")
+listbox.place(x=350, y=50, width=150, height=80)
 img = PhotoImage(file="1.png")
 lbl_img = Label(image=img)
+lbl_img.image = img
 lbl_img.place(x=75, y=200)
 tk.mainloop()
