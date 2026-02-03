@@ -41,7 +41,7 @@ btn2 = tk.Button(
     fg="white",
     width=10,
     height=3,
-    command=button2_click  # прив'язка обробника події
+    command=button2_click
 )
 btn2.pack(pady=10)
 
